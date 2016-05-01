@@ -22,6 +22,8 @@ source 'https://rubygems.org'
 
  gem 'sass-rails', '~> 5.0'
 
+ gem 'pry-rails', :group => :development
+
  gem 'uglifier', '>= 1.3.0'
 
  gem 'coffee-rails', '~> 4.1.0'
