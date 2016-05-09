@@ -1,55 +1,13 @@
 require 'random_data'
 
-50.times do
-
-    Post.create!(
-
-      title: RandomData.random_sentence,
-      body:  RandomData.random_paragraph
-    )
- end
-
- posts = Post.all
-
- 100.times do
-    Comment.create!(
-
-      post: posts.sample,
-      body: RandomData.random_paragraph
-
-    )
- end
-
-#Trial 1
-2.times do
-    Post.create!(
-
-        title: RandomData.random_sentence,
-        body:  RandomData.random_paragraph
-        )
-    end
-
-    uniq_post = Post.all
-
-2.times do
-    Comment.create!(
-
-        post: uniq_post.sample,
-        body: RandomData.random_paragraph
-
-        )
-    end
-
-  #Trail 2
-  Post.create!(
+  #Trial 2
+  trial_post = Post.find_or_create_by(
       title: "Why am I great?",
       body:  "Because I speak therefore I am"
       )
 
-  trial_post = Post.all
-
-  Comment.create!(
-      post: trial_post.sample,
+  Comment.find_or_create_by(
+      post: trial_post,
       body: "This is why I am Great"
       )
 
